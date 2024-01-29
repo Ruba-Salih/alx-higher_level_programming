@@ -99,7 +99,7 @@ class Rectangle:
 
         rg = '#' * self.width
         rg2 = rg
-        for i in range(self.height):
+        for i in range(self.height - 1):
             rg2 += '\n' + rg
         return (rg2)
 
