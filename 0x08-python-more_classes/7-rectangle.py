@@ -101,7 +101,7 @@ class Rectangle:
         rg = Rectangle.print_symbol * self.width
         rg2 = rg
         for i in range(self.height):
-            rg += '\n' + rg2
+            rg2 += '\n' + rg
         return (rg)
 
     def __repr__(self):
