@@ -30,7 +30,7 @@ class Rectangle:
         Args:
             value: value
         """
-        if self.check_call(value, 0):
+        if self.check_val(value, 0):
             self.width = value
 
     @property
@@ -46,7 +46,7 @@ class Rectangle:
         Args:
             value: value
         """
-        if self.check_call(value, 1):
+        if self.check_val(value, 1):
             self.height = value
 
     def check_val(self, val, flag):
