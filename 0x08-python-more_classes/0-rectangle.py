@@ -2,6 +2,8 @@
 """
 Rectangle class definition
 """
+
+
 class Rectangle:
     """
     empty Rectangle class
