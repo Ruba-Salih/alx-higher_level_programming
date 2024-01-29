@@ -22,7 +22,7 @@ class Rectangle:
         """
         return width
         """
-        return (self.width)
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -31,14 +31,14 @@ class Rectangle:
             value: value
         """
         if self.check_val(value, 0):
-            self.width = value
+            self.__width = value
 
     @property
     def height(self):
         """
         return height
         """
-        return (self.height)
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -47,7 +47,7 @@ class Rectangle:
             value: value
         """
         if self.check_val(value, 1):
-            self.height = value
+            self.__height = value
 
     def check_val(self, val, flag):
         """
