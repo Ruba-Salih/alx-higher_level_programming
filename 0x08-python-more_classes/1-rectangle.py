@@ -4,6 +4,9 @@ Rectangle class definition
 """
 
 class Rectangle:
+    """
+    full Rectangle class
+    """
     def __init__(self, width=0, height=0):
         """
         Args:
