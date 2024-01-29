@@ -2,8 +2,6 @@
 """
 Rectangle class definition
 """
-from subprocess import check_call
-
 
 class Rectangle:
     def __init__(self, width=0, height=0):
@@ -28,7 +26,7 @@ class Rectangle:
         Args:
             value: value
         """
-        if check_call(value, 0):
+        if self.check_call(value, 0):
             self.width = value
         
 
@@ -46,7 +44,7 @@ class Rectangle:
         Args:
             value: value
         """
-        if check_call(value, 1):
+        if self.check_call(value, 1):
             self.height = value
         
 
