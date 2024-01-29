@@ -3,6 +3,7 @@
 Rectangle class definition
 """
 
+
 class Rectangle:
     """
     full Rectangle class
@@ -31,8 +32,6 @@ class Rectangle:
         """
         if self.check_call(value, 0):
             self.width = value
-        
-
 
     @property
     def height(self):
@@ -49,7 +48,6 @@ class Rectangle:
         """
         if self.check_call(value, 1):
             self.height = value
-        
 
     def check_val(self, val, flag):
         """
@@ -69,6 +67,6 @@ class Rectangle:
             if type(val) is not int:
                 raise TypeError('height must be an integer')
             elif val < 0:
-                raise ValueError('height must be >= 0') 
+                raise ValueError('height must be >= 0')
             else:
                 return (True)
