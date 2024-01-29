@@ -104,4 +104,3 @@ class Rectangle:
         return string
         """
         return ('Rectangle({:d}, {:d})'.format(self.width, self.height))
-    
