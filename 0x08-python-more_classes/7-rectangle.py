@@ -102,7 +102,7 @@ class Rectangle:
         rg2 = rg
         for i in range(self.height):
             rg2 += '\n' + rg
-        return (rg)
+        return (rg2)
 
     def __repr__(self):
         """
