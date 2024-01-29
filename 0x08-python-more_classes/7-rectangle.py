@@ -98,7 +98,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ('')
 
-        rg = Rectangle.print_symbol * self.width
+        rg = self.print_symbol * self.width
         rg2 = rg
         for i in range(self.height - 1):
             rg2 += '\n' + rg
