@@ -1,7 +1,7 @@
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
->>> print(matrix_divided([[6,9]], 2))
-[[3.0, 4.50]]
+>>> print(matrix_divided([[6,7]], 2))
+[[3.0, 4.5]]
 >>> print(matrix_divided([[2,4]], True))
 [[2.0, 4.0]]
 >>> print(matrix_divided([[2,4]], -2))
