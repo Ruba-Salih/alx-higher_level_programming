@@ -2,7 +2,7 @@
 """Defines a text file-reading function."""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Write a string to a UTF8 text file.
     Args:
         filename (str): The name of the file to write.
@@ -11,5 +11,5 @@ def write_file(filename="", text=""):
         The number of characters written.
     """
 
-    with open(filename, 'w', encoding='UTF-8') as f:
+    with open(filename, 'a', encoding='UTF-8') as f:
         return (f.write(text))
