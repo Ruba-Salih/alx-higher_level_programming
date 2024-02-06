@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 """Defines a text file-reading function."""
-import json
+from sys import argv
 
 
-def save_to_json_file(my_obj, filename):
-    """Write a string to a UTF8 text file.
-    Args:
-        my_obj : The name of the file to write.
-        filename : The name of the file to write.
-    """
-    with open(filename, 'w', encoding='UTF-8') as f:
-        f.write(json.dumps(my_obj))
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+json_f = 'add_item.json'
+
+try:
+    my_list = load_from_json_file(json_f)
+except FileNotFoundError:
+    my_list = []
+
+my_list.extend(argv[1:])
+save_to_json_file(my_list, json_f)
