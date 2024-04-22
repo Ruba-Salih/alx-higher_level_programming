@@ -94,7 +94,7 @@ class Base:
         li = []
         try:
             with open(name, 'r') as f:
-                li = cls.from_json_string(f.read(name))
+                li = cls.from_json_string(f.read())
                 for i in range(len(li)):
                     li[i] = cls.create(**li[i])
         except ():
