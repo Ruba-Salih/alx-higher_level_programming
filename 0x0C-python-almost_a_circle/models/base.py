@@ -99,6 +99,6 @@ class Base:
             for i in li:
                 li2.append(cls.create(**i))
             return li2
-        except ():
+        except IOError:
             return li2
         
