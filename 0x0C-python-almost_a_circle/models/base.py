@@ -79,7 +79,8 @@ class Base:
             else:
                 obj = cls(1)
 
-        return obj.update(**dictionary)
+        obj.update(**dictionary)
+        return obj
 
     @classmethod
     def load_from_file(cls):
