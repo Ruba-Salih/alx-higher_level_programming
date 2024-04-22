@@ -88,10 +88,16 @@ class Base:
         Return: a list of instances
         """
 
-        filename = str(cls.__name__) + ".json"
+        name = cls.__name__
+        name += '.json'
+
+        li = []
+        li2 = []
         try:
-            with open(filename, "r") as jsonfile:
-                list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.create(**d) for d in list_dicts]
-        except IOError:
-            return []
+            with open(name, 'r') as f:
+                li = cls.from_json_string(f.read())
+            for i in li:
+                li2.append(cls.create(i))
+        except ():
+            pass
+        return li2
