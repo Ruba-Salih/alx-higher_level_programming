@@ -146,5 +146,6 @@ class Base:
                         x[i] = int(n)
                     li.append(x)
                 return ([cls.create(**i) for i in li])
+
         except IOError:
             return []
