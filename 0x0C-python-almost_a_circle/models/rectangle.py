@@ -129,8 +129,30 @@ class Rectangle(Base):
             print: the rectangle
         """
 
-        for y1 in range(self.__y):
-            for x1 in range(self.__x):
-                print('#')
+        for i in range(self.__y):
+                     print()
+        for a in range(self.__height):
+                print('{}{}'.format(' ' * self.x,"#" * self.__width))
 
-        #print(['#' for ])
+    def __str__(self):
+         """
+            print: the rectangle attribute
+        """
+
+         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+    
+    def update(self, *args, **kwargs):
+        """
+        Args:
+            args: numbers of values
+        """
+
+        #if args is not None:
+        
+        lis = [self.id, self.width, self.height, self.x, self.y]
+        i = 0
+
+        for arg in range(len(args)):
+            lis[i] = args[arg]
+            i += 1
+             
