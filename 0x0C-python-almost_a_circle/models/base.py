@@ -73,7 +73,7 @@ class Base:
             dictionary:  a dictionary
         """
 
-        if dictionary and len(dictionary) != 0:
+        if dictionary and len(dictionary) != {}:
             if cls.__name__ == 'Rectangle':
                 obj = cls(1, 1)
             else:
