@@ -95,7 +95,7 @@ class Base:
         try:
             with open(name, 'r') as f:
                 li = cls.from_json_string(f.read())
-            for i in range(len(li)):
+            for i, j in enumerate(li):
                 li[i] = cls.create(**li[i])
         except ():
             pass
