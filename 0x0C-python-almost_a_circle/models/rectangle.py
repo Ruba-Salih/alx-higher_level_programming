@@ -139,20 +139,34 @@ class Rectangle(Base):
             print: the rectangle attribute
         """
 
-         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+         return  "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
     
     def update(self, *args, **kwargs):
         """
         Args:
             args: numbers of values
+            kwargs: numbers of values in dic structur
         """
 
-        #if args is not None:
-        
-        lis = [self.id, self.width, self.height, self.x, self.y]
-        i = 0
+        if len(args) != 0 and args is not None:
+             for i, j in enumerate(args):
+                  if i == 0:
+                       self.id = j
+                  elif i == 1:
+                       self.width = j
+                  elif i == 2:
+                       self.height = j
+                  elif i == 3:
+                       self.x = j
+                  elif i == 4:
+                       self.y = j
+        else:
+             for key, val in kwargs.items():
+                  self.__setattr__(key, val)
 
-        for arg in range(len(args)):
-            lis[i] = args[arg]
-            i += 1
-             
+    def to_dictionary(self):
+         return {'id': self.id,
+                 'width': self.width, 'height': self.height,
+                 'x': self.x, 'y': self.y}
