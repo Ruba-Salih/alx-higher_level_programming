@@ -92,14 +92,12 @@ class Base:
         name += '.json'
 
         li = []
-
+        li2 = []
         try:
             with open(name, 'r') as f:
                 li = cls.from_json_string(f.read())
-            for i in range(len(li)):
-                li[i] = cls.create(**i)
-
+            for i in li:
+                li2.append(cls.create(**i))
+            return li2
         except IOError:
-            pass
-        return li
-        
+            return li2
