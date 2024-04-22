@@ -98,7 +98,8 @@ class Base:
                 li = cls.from_json_string(f.read())
             for i in li:
                 li2.append(cls.create(**i))
-            return li2
+
         except IOError:
-            return li2
+            pass
+        return li2
         
