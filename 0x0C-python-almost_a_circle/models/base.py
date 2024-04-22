@@ -75,9 +75,9 @@ class Base:
 
         if dictionary and len(dictionary) != 0:
             if cls.__name__ == 'Rectangle':
-                obj = cls(2, 6)
+                obj = cls(1, 1)
             else:
-                obj = cls(4)
+                obj = cls(1)
 
         return obj.update(**dictionary)
 
