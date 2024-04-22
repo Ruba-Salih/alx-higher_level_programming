@@ -113,12 +113,13 @@ class Base:
         name += '.csv'
 
         with open(name, 'w') as f:
-            if list_objs is None or len(list_objs) == 0:
+            if list_objs is None or list_objs == []:
                 csv.write('[]')
             elif cls.__name__ == 'Rectangle':
                 hedername = ['id', 'width', 'height', 'x', 'y']
             else:
                 hedername = ['id', 'size', 'x', 'y']
+
             writer = csv.DictWriter(f, hedername)
 
             for i in list_objs:
@@ -134,7 +135,7 @@ class Base:
         name += '.csv'
 
         try:
-            with open(name, 'w') as f:
+            with open(name, 'r') as f:
                 if cls.__name__ == 'Rectangle':
                     hedername = ['id', 'width', 'height', 'x', 'y']
                 else:
