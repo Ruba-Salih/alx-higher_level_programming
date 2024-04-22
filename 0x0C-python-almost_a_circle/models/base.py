@@ -3,6 +3,7 @@
 Base class definition
 """
 import json
+import csv
 
 
 class Base:
@@ -101,3 +102,49 @@ class Base:
             return li2
         except IOError:
             return li2
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Return: a list of instances
+        """
+
+        name = cls.__name__
+        name += '.csv'
+
+        with open(name, 'w') as f:
+            if list_objs is None or len(list_objs) == 0:
+                csv.write('[]')
+            elif cls.__name__ == 'Rectangle':
+                hedername = ['id', 'width', 'height', 'x', 'y']
+            else:
+                hedername = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(f, hedername)
+
+            for i in list_objs:
+                writer.writerow(i.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Return: a list of instances
+        """
+
+        name = cls.__name__
+        name += '.csv'
+
+        try:
+            with open(name, 'w') as f:
+                if cls.__name__ == 'Rectangle':
+                    hedername = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    hedername = ['id', 'size', 'x', 'y']
+                read = csv.DictReader(f, hedername)
+                li = []
+                for x in read:
+                    for i, n in x.items():
+                        x[i] = int(n)
+                    li.append(x)
+                return ([cls.create(**i) for i in li])
+        except IOError:
+            return []
