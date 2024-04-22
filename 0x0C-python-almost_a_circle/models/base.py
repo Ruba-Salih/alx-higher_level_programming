@@ -98,6 +98,7 @@ class Base:
                 li = cls.from_json_string(f.read())
             for i in li:
                 li2.append(cls.create(**i))
+            return li2
         except ():
-            pass
-        return li2
+            return li2
+        
