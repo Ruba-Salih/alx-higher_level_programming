@@ -147,5 +147,5 @@ class Base:
                     li.append(x)
                 return ([cls.create(**i) for i in li])
 
-        except IOError:
+        except FileNotFoundError:
             return []
