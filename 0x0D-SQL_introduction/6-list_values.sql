@@ -1,2 +1,2 @@
 -- deletes the database hbtn_0c_0
-DESCRIBE first_table;
+SELECT * FROM first_table;
