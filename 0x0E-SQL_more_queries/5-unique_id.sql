@@ -1,2 +1,2 @@
 -- lists all the tables of a database
-CREATE TABLE IF NOT EXISTS id_not_null (id DEFAULT {1} INT, name VARCHAR(256));
+CREATE TABLE IF NOT EXISTS unique_id (id INT DEFAULT 1 UNIQUE, name VARCHAR(256));
