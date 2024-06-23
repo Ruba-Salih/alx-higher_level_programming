@@ -17,8 +17,8 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states \
-                 WHERE name LIKE BINARY 'N%' \
-                 ORBER BY states.id ASC")
+                 WHERE name = '{}' \
+                 ORDER BY states.id ASC".format(argv[2]))
 
     for row in cur.fetchall():
         print(row)
