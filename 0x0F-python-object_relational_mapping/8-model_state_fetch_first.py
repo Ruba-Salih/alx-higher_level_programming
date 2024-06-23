@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-
-from model_state import State, Base
-from sys import argv
-from sqlalchemy import create_engine
+""" prints the first State object from the database hbtn_0e_6_usa
+"""
+import sys
+from model_state import Base, State
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == '__main__':
-    """
-    Access to the database and get the states
-    from the database.
-    """
 
+if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                            .format(argv[1], argv[2], argv[3]))
-
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    row = session.query(State).order_by(State.id).first()
-    if row is None:
-        print('Nothing')
+    instance = session.query(State).first()
+    if instance is None:
+        print("Nothing")
     else:
-        print(row.id, row.name, sep=": ")
+        print(instance.id, instance.name, sep=": ")
