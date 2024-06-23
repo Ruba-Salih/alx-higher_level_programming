@@ -21,4 +21,4 @@ if __name__ == '__main__':
     if row is None:
         print('Nothing')
     else:
-        print(row.id, row.name, sep=": ")
+        print(row)
