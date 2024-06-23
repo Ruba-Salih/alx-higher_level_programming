@@ -26,5 +26,4 @@ if __name__ == '__main__':
                  WHERE states.name = %s \
                  ORDER BY cities.id ASC", (argv[4], ))
 
-    for row in cur.fetchall():
-        print(row, sep=',')
+    print(", ".join([row[1] for row in cur.fetchall()]))
